@@ -1,11 +1,11 @@
 <html>
 <head>
 <!-- Load c3.css -->
-<link href="c3/c3.css" rel="stylesheet">
+<link href="../c3/c3.css" rel="stylesheet">
 
 <!-- Load d3.js and c3.js -->
-<script src="d3.min.js" charset="utf-8"></script>
-<script src="c3/c3.min.js"></script>
+<script src="../d3.min.js" charset="utf-8"></script>
+<script src="../c3/c3.min.js"></script>
 
 </head>
 <body>
@@ -15,12 +15,16 @@
 
 <div id="taxgdp">
 </div>
+
+<div id ="directIndirect">
+</div>
+
 <script type = "text/javascript">
 var areaSpline = c3.generate({
     bindto: '#areaSpline',
     data: {
-    	x: 'Year',
-    	url: 'csvFiles/taxAreaStack.csv',
+        x: 'Year',
+        url: '../csvFiles/taxAreaStack.csv',
         type: 'area-spline',
         groups: [['Personal Income Tax', 'Corporation tax','Excise duties','Customs duties']]
     } 
@@ -29,11 +33,21 @@ var areaSpline = c3.generate({
 var taxGdp = c3.generate({
     bindto: '#taxgdp',
     data: {
-    	x: 'Year',
-    	url: 'csvFiles/taxLines.csv'
+        x: 'Year',
+        url: '../csvFiles/taxLines.csv'
         
     } 
 });
+
+var directIndirect = c3.generate({
+    bindto: '#directIndirect',
+    data: {
+        x: 'Year',
+        url: '../csvFiles/directIndirectLines.csv'
+        
+    } 
+
+})
 
 
 </script>
